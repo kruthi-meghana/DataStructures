@@ -61,14 +61,18 @@ Collection of solutions for basic data structure problems in C/C++.
 55) Print all binary numbers from 1 to n.
 56) Count the set bits of a number in binary format.
 57) Given an array where every element occurs three times, except one element which occurs only once. Find the element that occurs once.ex: arr=12, 1, 12, 3, 12, 1, 1, 2, 3, 3. o/p: 2.
+
 **Recursion:**
+
 58) A boy can climb 1 or 2 steps at a time.In how many ways he can climb n stairs?(Extension : print the paths).
 59) Print all possible subsets of n numbers.
 60) Count the number of elements greater than the given element in an array.
 61) Fibnocci series upto a given number.
 62) Factorial of a given number.This problem was actually given to us to know about stack frame and it's size by infinty recurrsion i.e no base condition.
 63) Given an array where elements in array becomes the parent node for child nodes which are their indices, find the maximum height*//*solution : since Height = Depth, calculating the depths of all nodes recursively , complexity = O(n).
+
 **Trees:**
+
 64) Given a tree fill up each of its nodes with balance values.
 65) Given a tree fill up each of its nodes with depth values.
 66) Fill up each node of tree with weight of the node's subtree.
@@ -78,7 +82,9 @@ Collection of solutions for basic data structure problems in C/C++.
 70) Find common ancestor ofany random tree.
 71) Given an array where elements in array becomes the parent node for child nodes which are their indices, find the maximum height*//*solution : since Height = Depth, calculating the depths of all nodes recursively , complexity = O(n).
 72) Given a binary search tree print in-order, pre-order, post-order traversals of the tree.
+
 **Linked list:**
+
 73) Given a number convert that to single linked listeach digit as a node.
 74) Given a single linked list which has two digits in each node, convert that to a string (first node has msb). example 12->34->56->78 should output as "12345678".
 75) Given a linked list, swap using pointers every two nodes a->b->c->d->e should become b->a->d->c->e.
