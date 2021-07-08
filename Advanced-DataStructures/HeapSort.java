@@ -5,46 +5,79 @@ import java.util.*;
 
 
 /*
-Given an Iterator class interface with methods: next() and hasNext(), design and implement a PeekingIterator that support the peek() operation -- it essentially peek() at the element that will be returned by the next call to next().
+Heap Sort:
 
-Example:
+Given an array of elements, 
 
-Assume that the iterator is initialized to the beginning of the list: [1,2,3].
+to re-arrange the elements to form either MaxHeap or Min Heap is called Heapify - O(log n)
+to insert elements in to a heap for 'n' elements - O(nlog n)
+to delete elements in a heap - O(nlog n)
 
-Call next() gets you 1, the first element in the list.
-Now you call peek() and it returns 2, the next element. Calling next() after that still return 2. 
-You call next() the final time and it returns 3, the last element. 
-Calling hasNext() after that should return false.
+Heapify:
+
+1) This process is done from bottom-to-up
+2) you compare the child nodes with the root node and check if max(or min) heap condition is satisfied.
+3) If not you swap the root and related child, and repeat the process for the child.
+
+Sort:
+
+1) At any given point of time the highest(lowest for min) number is find at the root of the tree.
+2) You swap the root with the last node and decrease your 'n', and perform heapify to the newly formed array.
+3) you get the sorted array when you n becomes 0.
 
 
 @author: Kruthi Meghana Anumandla
 */
 
-class PeekingIterator implements Iterator<Integer> {
+public class HeapSort {
     
-    private Iterator<Integer> iter;
-    private Integer nextElement = null;
-    
-	public PeekingIterator(Iterator<Integer> iterator) {
-	    // initialize any member here.
-         iter = iterator;
-         nextElement = iter.hasNext()? iter.next() : null;	    
-	}
-    
-	public Integer peek() {
-        return nextElement;
+	public void sort(int arr[]) {
+        	
+		int n = arr.length;
+ 
+ 	       for (int i = n - 1; i > 0; i--) {
+            	    int swap = arr[0];
+            	    arr[0] = arr[i];
+            	    arr[i] = swap;
+		    heapify(arr, i, 0);
+        	}
+ 	}
+ 
+ 
+    	void heapify(int arr[], int n, int i) {
+        	int largest = i; 
+        	int l = 2 * i + 1;
+        	int r = 2 * i + 2; 
+		
+        	if (l < n && arr[l] > arr[largest])
+        	    largest = l;
+ 
         
-	}
-    
-	@Override
-	public Integer next() {
-        Integer buffer = nextElement;
-        nextElement = iter.hasNext()? iter.next() : null;
-	    return buffer;
-	}
+       		if (r < n && arr[r] > arr[largest])
+            	largest = r;
+ 
+        
+	        if (largest != i) {
+        	    int swap = arr[i];
+            	    arr[i] = arr[largest];
+            	    arr[largest] = swap;
+ 
+ 	           heapify(arr, n, largest);
+        	}
+    	}
 	
-	@Override
-	public boolean hasNext() {
-	    return nextElement == null? false: true;
-	}
+	public static void main(String args[]) {
+	        int arr[] = { 12, 11, 13, 5, 6, 7 };
+        	int n = arr.length;
+ 
+ 	       HeapSort heapObj = new HeapSort();
+	       for(int i = n/2 - 1; i >= 0; i++) {
+		       heapObj.heapify(arr, n, i);
+	       }
+               heapObj.sort(arr);
+ 
+               System.out.println("Sorted array is");
+               for(int i = 0; i < n; i++)
+		       System.out.println(arr[i]);
+    }
 }
