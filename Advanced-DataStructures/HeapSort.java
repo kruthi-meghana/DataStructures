@@ -9,9 +9,9 @@ Heap Sort:
 
 Given an array of elements, 
 
-to re-arrange the elements to form either MaxHeap or Min Heap is called Heapify - O(n)
-to insert elements in to a heap for 'n' elements - O(nlog n)
-to delete elements in a heap - O(nlog n)
+to re-arrange the elements to form either MaxHeap or Min Heap is called Heapify - O(log n)
+to insert elements in to a heap for 'n' elements - O(n)
+to delete elements in a heap - O(n)
 
 Heapify:
 
@@ -19,7 +19,7 @@ Heapify:
 2) you compare the child nodes with the root node and check if max(or min) heap condition is satisfied.
 3) If not you swap the root and related child, and repeat the process for the child.
 
-Sort:
+Sort O(nlogn):
 
 1) At any given point of time the highest(lowest for min) number is find at the root of the tree.
 2) You swap the root with the last node and decrease your 'n', and perform heapify to the newly formed array.
