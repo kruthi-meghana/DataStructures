@@ -9,7 +9,7 @@ Heap Sort:
 
 Given an array of elements, 
 
-to re-arrange the elements to form either MaxHeap or Min Heap is called Heapify - O(log n)
+to re-arrange the elements to form either MaxHeap or Min Heap is called Heapify - O(n)
 to insert elements in to a heap for 'n' elements - O(nlog n)
 to delete elements in a heap - O(nlog n)
 
